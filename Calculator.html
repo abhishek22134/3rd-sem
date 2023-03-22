@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+     #calculator {
+  display: flex;
+  flex-wrap: wrap;
+  width: 240px;
+  height: 320px;
+  background-color: #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#calculator input {
+  width: 240px;
+  height: 60px;
+  font-size: 18px;
+  text-align: right;
+  border: none;
+  background-color: #fff;
+}
+
+#calculator button {
+  width: 60px;
+  height: 60px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#calculator button.operator {
+  background-color: #eee;
+}
+
+#calculator button.number {
+  background-color: #ddd;
+}
+
+    </style>
+</head>
+<body>
+<div id="calculator">
+    <input type="text" id="display" value="" disabled>
+    <button type="button" class="operator" value="+">+</button>
+    <button type="button" class="operator" value="-">-</button>
+    <button type="button" class="operator" value="*">&times;</button>
+    <button type="button" class="operator" value="/">&divide;</button>
+    <button type="button" id="clear" value="C">C</button>
+    <button type="button" class="number" value="7">7</button>
+    <button type="button" class="number" value="8">8</button>
+    <button type="button" class="number" value="9">9</button>
+    <button type="button" class="number" value="4">4</button>
+    <button type="button" class="number" value="5">5</button>
+    <button type="button" class="number" value="6">6</button>
+    <button type="button" class="number" value="1">1</button>
+    <button type="button" class="number" value="2">2</button>
+    <button type="button" class="number" value="3">3</button>
+    <button type="button" class="number" value="0">0</button>
+    <button type="button" id="decimal" value=".">.</button>
+    <button type="button" id="equals" value="=">=</button>
+</div>
+<script>
+      // Get the display element
+const display = document.getElementById("display");
+
+// Get the buttons
+const buttons = document.querySelectorAll("#calculator button");
+
+// Add a click event listener to each button
+for (const button of buttons) {
+  button.addEventListener("click", (event) => {
+    // Get the value of the button
+    const value = event.target.value;
+
+    // Check if the value is a number
+    if (value >= "0" && value <= "9") {
+      // Append the value to the display
+      display.value += value;
+    }
+
+    // Check if the value is a decimal point
+    if (value === ".") {
+      // Check if the display already contains a decimal point
+      if (display.value.indexOf(".") === -1) {
+        // Append the decimal point to the display
+        display.value += ".";
+      }
+    }
+
+    // Check if the value is an operator
+    if (value === "+" || value === "-" || value === "*" || value === "/") {
+      // Check if the display already contains an operator
+      if (display.value.slice(-1).search(/[\+\-\*\/]/) === -1) {
+        // Append the operator to the display
+        display.value += value;
+      }
+    }
+
+    // Check if the value is the equals sign
+    if (value === "=") {
+      // Evaluate the expression in the display and display the result
+      display.value = eval(display.value);
+    }
+
+    // Check if the value is the clear button
+    if (value === "C") {
+      // Clear the display
+      display.value = "";
+    }
+  });
+}
+
+    </script>
+</body>
+</html>

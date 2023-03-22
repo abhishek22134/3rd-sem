@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>
+        How to attach a click and double-click
+        event to an element in jQuery?
+    </title>
+  
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+  
+    <script>
+        $(document).ready(function () {
+            $(".clickable").bind("click", function () {
+                $("<h4>Single click Event called</h4>");
+                $("<h4>Single click Event called</h4>")
+                .appendTo(".next");
+            });
+  
+            $(".clickable").bind("dblclick", function () {
+                $("<h4>Double click Event called</h4>");
+                $("<h4>Double click Event called</h4>")
+                .appendTo(".next");
+            });
+            
+        });
+    </script>
+  
+     
+</head>
+  
+<body>
+    
+  
+    <div class="clickable">
+        Click me!
+    </div>
+    <div class="next"></div>
+     
+</body>
+  
+</html>

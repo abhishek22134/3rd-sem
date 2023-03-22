@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+    <style>
+
+        #loader-wrapper {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            opacity: 1.0;
+            transition: opacity 2s ease;
+        }
+        #loader {
+            display: block;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            margin: -5rem;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #08e7f7;
+
+            animation: spin 2s linear infinite;
+        }
+
+        #loader:before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #f8890a;
+
+            animation: spin 3s linear infinite;
+        }
+        @keyframes spin {
+            0%   { 
+                transform: rotate(0deg); 
+            }
+            100% {
+                transform: rotate(360deg); 
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 
+    <title>Question4</title>
+</head>
+
+<body>
+
+    <div style="display: flex;">
+        <img onmouseover="collorChange()" onmouseout="defaultColor()" src="1403496.jpg" alt="" height="300">
+    
+        <div id="para">  colour changes when coursor moves</div> 
+
+    <script>
+
+        let x = document.getElementById('para')
+
+        function collorChange() {
+            x.style.color = "green";
+        }
+
+        function defaultColor() {
+            x.style.color = "black";
+        }
+    </script>
+</body>
+
+</html>

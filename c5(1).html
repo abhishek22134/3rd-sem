@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <script src="https://code.jquery.com/jquery-3.5.0.min.js">
+ </script>
+ <script> 
+ $(document).ready(function(){
+    $(".btn1").click(function(){
+      $("p").slideUp();
+    });
+      $(".btn2").click(function(){
+      $("p").slideDown();
+    });
+    $("#btn3").click(function(){
+ $("#box").animate({height:"300px"});
+ });
+ $("#btn4").click(function(){
+ $("#box").animate({height:"100px"});
+ });
+ $("#btn5").click(function(){
+ $("#hs").hide();
+ });
+ $("#btn6").click(function(){
+ $("#hs").show();
+ });
+ $("#mm").mouseenter(function(){
+ $("#mn").css("background-color","dodgerblue");
+ });
+ $("#mm").mouseleave(function(){
+ $("#mn").css("background-color","yellow");
+ });
+ $("#btn7").click(function(){
+ $("img").attr("width", "200" );
+ });
+ $("#dbl").dblclick(function(){
+ alert("The paragraph was clicked");
+ });
+ $("#btn7").click(function(){
+ $("p").html("hello<b>world!</b>");
+ });
+ $("#btn8").click(function(){
+ $("#22").fadeOut();
+ });
+ $("#btn9").click(function(){
+ $("#22").fadeIn();
+ });
+ });
+</script>
+ </head>
+ <body>
+ <p><b>This is example of the slide down</b></p>
+ <button class="btn1">Slide up</button>
+ <button class="btn2">Slide down</button>
+ <p1>Click here to Animate</p1>
+ <button id="btn3">Animate height</button>
+ <button id="btn4">reset height</button>
+ <div id="box" style="background:#98bf21; height: 100px; width:
+100px; margin: 6px;" >
+ </div>
+ <br><br>
+ <br><br>
+ <br><br>
+ <br><br>
+
+ <button id="btn5">Hide</button>
+ <button id="btn6">Show</button><br>
+ <div id="hs"><p2>Hide And Show</p2></div>
+ <div id="mm"><p id="mn"> Mouse Enter And Mouse Leave</p></div>
+ <button id="btn5">Set width</button>
+ <div><img src="download.jfif" height="100px" width="100px">
+ </div>
+ <p id="dbl">Double Click!!!</p>
+ <p>This is paragraph</p>
+ <p>This is another paragraph</p>
+ <button id="btn7">change the contents of all p elements</button>
+ <p id="22">For Fade in</p>
+ <button id="btn8">FadeOut</button>
+ <button id="btn9">FadeIn</button>
+ </body>
+ </html>
